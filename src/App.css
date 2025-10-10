@@ -1,0 +1,13 @@
+/* Dans votre fichier CSS global */
+video {
+    object-fit: cover;
+    background-color: #000;
+}
+
+.video-controls-overlay {
+    transition: opacity 0.3s ease;
+}
+
+.video-controls-overlay:hover {
+    opacity: 1;
+}
