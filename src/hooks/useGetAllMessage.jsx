@@ -15,7 +15,7 @@ const useGetAllMessage = () => {
 
       try {
         const res = await axios.get(
-          `http://localhost:8001/api/v1/message/all/${selectedUser._id}`, 
+          `https://youguybackend.vercel.app/api/v1/message/all/${selectedUser._id}`, 
           { withCredentials: true }
         );
         if (res.data.success) {

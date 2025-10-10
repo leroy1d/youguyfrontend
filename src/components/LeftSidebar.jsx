@@ -38,7 +38,7 @@ const LeftSidebar = () => {
     // Déconnexion
     const logoutHandler = async () => {
         try {
-            const res = await axios.get('http://localhost:8001/api/v1/user/logout', { withCredentials: true })
+            const res = await axios.get('https://youguybackend.vercel.app/api/v1/user/logout', { withCredentials: true })
             if (res.data.success) {
                 dispatch(setAuthUser(null))
                 dispatch(setSelectedPost(null))
@@ -76,7 +76,7 @@ const LeftSidebar = () => {
         }
         try {
             setLoading(true)
-            const res = await axios.get(`http://localhost:8001/api/v1/user/search?query=${searchQuery}`)
+            const res = await axios.get(`https://youguybackend.vercel.app/api/v1/user/search?query=${searchQuery}`)
             if (res.data.success) setSearchResults(res.data.users)
         } catch (error) {
             toast.error(error.response?.data?.message || "Erreur lors de la recherche")

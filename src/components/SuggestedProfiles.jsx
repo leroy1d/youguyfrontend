@@ -20,7 +20,7 @@ const SuggestedProfiles = () => {
             try {
                 setLoading(true)
                 setError(null)
-                const res = await axios.get(`http://localhost:8001/api/v1/user/suggested-profiles`, {
+                const res = await axios.get(`https://youguybackend.vercel.app/api/v1/user/suggested-profiles`, {
                     withCredentials: true
                 })
 
@@ -41,7 +41,7 @@ const SuggestedProfiles = () => {
                 setError('Failed to load suggestions')
                 // Fallback: utiliser les utilisateurs suggérés de base si l'API échoue
                 try {
-                    const fallbackRes = await axios.get(`http://localhost:8001/api/v1/user/suggested`, {
+                    const fallbackRes = await axios.get(`https://youguybackend.vercel.app/api/v1/user/suggested`, {
                         withCredentials: true
                     })
                     if (fallbackRes.data.success) {
@@ -70,7 +70,7 @@ const SuggestedProfiles = () => {
 
     const followUser = async (userId) => {
         try {
-            const res = await axios.post(`http://localhost:8001/api/v1/user/followorunfollow/${userId}`, {}, {
+            const res = await axios.post(`https://youguybackend.vercel.app/api/v1/user/followorunfollow/${userId}`, {}, {
                 withCredentials: true
             })
 

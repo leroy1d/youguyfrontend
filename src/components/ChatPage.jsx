@@ -60,7 +60,7 @@ const ChatPage = () => {
     }
 
     try {
-      const res = await axios.post(`http://localhost:8001/api/v1/message/send/${receiverId}`, formData, {
+      const res = await axios.post(`https://youguybackend.vercel.app/api/v1/message/send/${receiverId}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         },
@@ -78,7 +78,7 @@ const ChatPage = () => {
 
   const likeMessageHandler = async (messageId) => {
     try {
-      const res = await axios.post(`http://localhost:8001/api/v1/message/like/${messageId}`, {}, {
+      const res = await axios.post(`https://youguybackend.vercel.app/api/v1/message/like/${messageId}`, {}, {
         withCredentials: true
       });
 

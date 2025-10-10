@@ -7,7 +7,7 @@ import { toast } from 'sonner';
 import { toggleFollowUser } from '@/redux/authSlice';
 import { useTheme } from '@/contexts/ThemeContext';
 
-const API_BASE = 'http://localhost:8001/api/v1';
+const API_BASE = 'https://youguybackend.vercel.app/api/v1';
 
 const SuggestedUsers = () => {
     const dispatch = useDispatch();
