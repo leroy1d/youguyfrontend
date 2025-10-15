@@ -11,7 +11,7 @@ const useGetSuggestedUsers = () => {
   useEffect(() => {
     const fetchSuggestedUsers = async () => {
       try {
-        const res = await axios.get('https://youguybackend.vercel.app/api/v1/user/suggested', { 
+        const res = await axios.get('https://youguybackend.vercel.app:8001/api/v1/user/suggested', { 
           withCredentials: true 
         });
         if (res.data.success) {

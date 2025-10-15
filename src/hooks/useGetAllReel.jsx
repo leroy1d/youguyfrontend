@@ -10,7 +10,7 @@ const useGetAllReel = () => {
   useEffect(() => {
     const fetchAllReel = async () => {
       try {
-        const res = await axios.get('https://youguybackend.vercel.app/api/v1/reel/all', { 
+        const res = await axios.get('https://youguybackend.vercel.app:8001/api/v1/reel/all', { 
           withCredentials: true 
         });
         if (res.data.success) {
