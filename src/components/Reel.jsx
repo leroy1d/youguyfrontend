@@ -137,7 +137,7 @@ const Reel = ({ reel }) => {
     const likeOrDislikeHandler = async () => {
         try {
             const action = liked ? 'dislike' : 'like';
-            const res = await axios.get(`https://youguybackend.vercel.app:8001/api/v1/reel/${reel._id}/${action}`, { withCredentials: true });
+            const res = await axios.get(`https://youguybackend.vercel.app/api/v1/reel/${reel._id}/${action}`, { withCredentials: true });
             if (res.data.success) {
                 const updatedLikes = liked ? reelLike - 1 : reelLike + 1;
                 setReelLike(updatedLikes);
@@ -160,7 +160,7 @@ const Reel = ({ reel }) => {
 
     const commentHandler = async () => {
         try {
-            const res = await axios.post(`https://youguybackend.vercel.app:8001/api/v1/reel/${reel._id}/comment`, { text }, {
+            const res = await axios.post(`https://youguybackend.vercel.app/api/v1/reel/${reel._id}/comment`, { text }, {
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -186,7 +186,7 @@ const Reel = ({ reel }) => {
 
     const deleteReelHandler = async () => {
         try {
-            const res = await axios.delete(`https://youguybackend.vercel.app:8001/api/v1/reel/delete/${reel?._id}`, { withCredentials: true })
+            const res = await axios.delete(`https://youguybackend.vercel.app/api/v1/reel/delete/${reel?._id}`, { withCredentials: true })
             if (res.data.success) {
                 const updatedReelData = reels.filter((reelItem) => reelItem?._id !== reel?._id);
                 dispatch(setReels(updatedReelData));
@@ -200,7 +200,7 @@ const Reel = ({ reel }) => {
 
     const bookmarkHandler = async () => {
         try {
-            const res = await axios.get(`https://youguybackend.vercel.app:8001/api/v1/reel/${reel?._id}/bookmark`, { withCredentials: true });
+            const res = await axios.get(`https://youguybackend.vercel.app/api/v1/reel/${reel?._id}/bookmark`, { withCredentials: true });
             if (res.data.success) {
                 toast.success(res.data.message);
             }

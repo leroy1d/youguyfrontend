@@ -64,7 +64,7 @@ function App() {
 
   useEffect(() => {
     if (user) {
-      const socketio = io('https://youguybackend.vercel.app:8001', {
+      const socketio = io('https://youguybackend.vercel.app', {
         query: {
           userId: user?._id
         },

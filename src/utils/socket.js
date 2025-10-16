@@ -2,7 +2,7 @@
 // frontend/src/utils/socket.js
 import { io } from "socket.io-client";
 
-export const socket = io("https://youguybackend.vercel.app:8001", {
+export const socket = io("https://youguybackend.vercel.app", {
   withCredentials: true,
   transports: ["websocket", "polling"] // Ajoutez cette ligne
 });

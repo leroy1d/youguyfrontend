@@ -28,7 +28,7 @@ const Login = () => {
         e.preventDefault();
         try {
             setLoading(true);
-            const res = await axios.post('https://youguybackend.vercel.app:8001/api/v1/user/login', input, {
+            const res = await axios.post('https://youguybackend.vercel.app/api/v1/user/login', input, {
                 headers: {
                     'Content-Type': 'application/json'
                 },

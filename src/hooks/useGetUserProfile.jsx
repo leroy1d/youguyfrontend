@@ -11,7 +11,7 @@ const useGetUserProfile = (userId) => {
     const fetchUserProfile = async () => {
       try {
         const res = await axios.get(
-          `https://youguybackend.vercel.app:8001/api/v1/user/${userId}/profile`, 
+          `https://youguybackend.vercel.app/api/v1/user/${userId}/profile`, 
           { withCredentials: true }
         );
         if (res.data.success) {
